@@ -10,21 +10,22 @@ class Siswa extends Model
     use HasFactory;
 
     protected $primaryKey = 'nisn';
-    public $incrementing = false; // Karena primary key bukan angka
+    public $incrementing = false;
+    
+    // TAMBAHKAN BARIS INI 👇
+    protected $table = 'siswa';
 
-    // Relasi: Satu siswa memiliki satu kelas
+    // Relasi
     public function kelas()
     {
         return $this->belongsTo(Kelas::class, 'id_kelas', 'id_kelas');
     }
 
-    // Relasi: Satu siswa memiliki banyak tagihan
     public function tagihan()
     {
         return $this->hasMany(Tagihan::class, 'nisn', 'nisn');
     }
 
-    // Relasi: Satu siswa memiliki satu user
     public function user()
     {
         return $this->hasOne(User::class, 'id_siswa', 'nisn');

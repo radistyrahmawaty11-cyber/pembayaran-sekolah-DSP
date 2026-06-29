@@ -10,8 +10,16 @@ class Kelas extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_kelas';
+    
+    protected $table = 'kelas';
 
-    // Relasi: Satu kelas memiliki banyak siswa
+    // TAMBAHKAN BARIS INI 👇
+    protected $fillable = [
+        'nama_kelas',
+        'jurusan',
+        'tahun_angkatan',
+    ];
+
     public function siswa()
     {
         return $this->hasMany(Siswa::class, 'id_kelas', 'id_kelas');

@@ -10,6 +10,8 @@ class JenisPembayaran extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_jenis';
+    
+    protected $table = 'jenis_pembayaran';
 
     // Relasi: Satu jenis pembayaran bisa ada di banyak tagihan
     public function tagihan()

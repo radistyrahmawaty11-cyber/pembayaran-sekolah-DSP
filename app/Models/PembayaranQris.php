@@ -10,6 +10,8 @@ class PembayaranQris extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_pembayaran';
+    
+    protected $table = 'pembayaran_qris';
 
     // Relasi: Satu pembayaran QRIS untuk satu tagihan
     public function tagihan()

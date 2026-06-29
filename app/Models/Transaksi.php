@@ -10,6 +10,8 @@ class Transaksi extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_transaksi';
+    
+    protected $table = 'transaksi';
 
     // Relasi: Satu transaksi untuk satu tagihan
     public function tagihan()

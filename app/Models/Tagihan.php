@@ -10,6 +10,8 @@ class Tagihan extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_tagihan';
+    
+    protected $table = 'tagihan';
 
     // Relasi: Satu tagihan milik satu siswa
     public function siswa()
